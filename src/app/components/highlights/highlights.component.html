@@ -1,0 +1,31 @@
+<div class="title">
+  <h2>Today's Highlights</h2>
+</div>
+<div class="wind-and-humidity">
+  <div class="wind-status">
+    <p>Wind status</p>
+    <div class="wind-speed">{{ weatherResult?.current?.wind_kph }}kph</div>
+    <div class="wind-direction">
+      <nb-icon icon="move-outline" pack="eva"></nb-icon>
+      <div>{{ weatherResult?.current?.wind_dir }}</div>
+    </div>
+  </div>
+  <div class="humidity">
+    <p>Humidity</p>
+    <div class="status">
+      <p>{{ weatherResult?.current?.humidity }}%</p>
+    </div>
+  </div>
+</div>
+<div class="visibility-and-air">
+  <div class="visibility-status">
+    <p>Visibility</p>
+    <div class="visibility-distance">
+      {{ weatherResult?.current?.vis_km }} kms
+    </div>
+  </div>
+  <div class="air-pressure">
+    <p>Air Pressure</p>
+    <div class="pressure-mb">{{ weatherResult?.current?.pressure_mb }} mb</div>
+  </div>
+</div>

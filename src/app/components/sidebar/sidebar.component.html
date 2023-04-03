@@ -1,0 +1,18 @@
+<div class="sidebar-container" *ngIf="weatherResult$ | async as weatherResult">
+  <div class="weather-image">
+    <img [src]="weatherResult.current.condition.icon" />
+  </div>
+  <div class="current-temperature">{{ weatherResult.current.temp_c }}°C</div>
+  <div class="weather-description">
+    {{ weatherResult.current.condition.text }}
+  </div>
+  <div class="sidebar-footer">
+    <div class="current-date">
+      Today - {{ weatherResult.location.localtime | date : "EEE, MMM d" }}
+    </div>
+    <div class="current-location">
+      <nb-icon icon="pin-outline" pack="eva"></nb-icon>
+      <p>{{ weatherResult.location.name }}</p>
+    </div>
+  </div>
+</div>

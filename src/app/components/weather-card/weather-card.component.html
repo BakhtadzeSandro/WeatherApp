@@ -1,0 +1,12 @@
+<div class="weather-information">
+  <div class="weather-date">
+    {{ weather?.date }}
+  </div>
+  <div class="weather-icon">
+    <img [src]="weather?.day?.condition?.icon" />
+  </div>
+  <div class="max-min">
+    <div class="max-temperature">{{ weather?.day?.maxtemp_c }}°C</div>
+    <div class="min-temperature">{{ weather?.day?.mintemp_c }}°C</div>
+  </div>
+</div>

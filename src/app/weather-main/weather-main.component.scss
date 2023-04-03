@@ -1,0 +1,15 @@
+nb-layout {
+  nb-layout-column {
+    background-color: #100e1d;
+    .weather-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 5%;
+      margin-top: 5%;
+    }
+  }
+  nb-sidebar {
+    background-color: #1e213a;
+    width: 23%;
+  }
+}

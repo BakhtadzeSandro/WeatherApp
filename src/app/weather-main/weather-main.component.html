@@ -1,0 +1,29 @@
+<nb-layout>
+  <nb-layout-column *ngIf="weather$ | async as weatherResult">
+    <div class="weather-container">
+      <div
+        class="weather-card"
+        *ngFor="let weather of weatherResult.forecast.forecastday"
+      >
+        <app-weather-card [weather]="weather"></app-weather-card>
+      </div>
+    </div>
+    <div class="highlights">
+      <app-highlights [weatherResult]="weatherResult"></app-highlights>
+    </div>
+  </nb-layout-column>
+  <nb-sidebar>
+    <nb-select
+      placeholder="Choose city"
+      [(ngModel)]="selectedCity"
+      (ngModelChange)="listenToCityChanges()"
+    >
+      <nb-option
+        *ngFor="let capicalCity of capitalCities"
+        [value]="capicalCity"
+        >{{ capicalCity }}</nb-option
+      >
+    </nb-select>
+    <app-sidebar [weatherResult$]="weather$"></app-sidebar>
+  </nb-sidebar>
+</nb-layout>
